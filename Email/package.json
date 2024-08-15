@@ -1,0 +1,19 @@
+{
+    "name": "email-worker",
+    "version": "1.0.0",
+    "description": "Email worker for Dummy Bank to process Emails",
+    "type": "module",
+    "main": "src/index.js",
+    "scripts": {
+        "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js",
+        "start": "node -r dotenv/config --experimental-json-modules src/index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "amqplib": "^0.10.4",
+        "dotenv": "^16.4.5",
+        "nodemailer": "^6.9.14"
+    }
+}
