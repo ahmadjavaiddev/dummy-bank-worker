@@ -171,7 +171,7 @@ async function sendEmail(JobData) {
             subject: `${subject} - ${websiteName}`,
             html: emailBody,
         });
-        console.log("Message sent: %s", info.messageId);
+        console.log("Email :: Message sent: %s", info.messageId);
     } catch (error) {
         console.log(`Error while sending Email to ${email} ::`, error);
     }

@@ -11,7 +11,7 @@ const connectRedis = async () => {
             redisClient.status === "connect" ||
             redisClient.status === "connecting"
         ) {
-            console.log("Redis client is already connecting/connected.");
+            console.log("Notification :: Redis client is already connecting/connected.");
             return;
         }
 
@@ -24,7 +24,7 @@ const connectRedis = async () => {
 
 // Event listeners for Redis client
 redisClient.on("connect", () => {
-    console.log("Redis Connected");
+    console.log("Notification :: Redis Connected");
 });
 
 redisClient.on("error", (err) => {

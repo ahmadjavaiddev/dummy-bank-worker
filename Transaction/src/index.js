@@ -22,7 +22,7 @@ const queueManager = new QueueManager();
                     const parentData = JSON.parse(Buffer.from(data.content));
                     await transactionWorker(parentData);
                     await channel.ack(data);
-                    console.log("Processed");
+                    console.log("Transaction :: Processed");
                 });
             } catch (error) {
                 console.log("Error while connecting to RabbitMQ", error);

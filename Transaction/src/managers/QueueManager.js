@@ -27,10 +27,10 @@ class QueueManager {
                 // Assert all queues
                 for (const queue of this.queues) {
                     await this.channel.assertQueue(queue, { durable: true });
-                    console.log(`Queue ${queue} is ready`);
+                    console.log(`Transaction :: Queue ${queue} is ready`);
                 }
 
-                console.log("Connected to RabbitMQ");
+                console.log("Transaction :: Connected to RabbitMQ");
             }
         } catch (error) {
             console.error("Error connecting to RabbitMQ:", error);
@@ -49,7 +49,7 @@ class QueueManager {
                 persistent: true,
             }
         );
-        console.log(`Sent message to ${queueName}: ${message}`);
+        console.log(`Transaction :: Sent message to ${queueName}: ${message}`);
     }
 
     async close() {

@@ -18,7 +18,7 @@ import { notificationWorker } from "./worker.js";
                     const parseData = JSON.parse(Buffer.from(data.content));
                     await notificationWorker(parseData);
                     channel.ack(data);
-                    console.log("Processed");
+                    console.log("Notification :: Processed");
                 });
             } catch (error) {
                 console.log("Error while connecting to RabbitMQ", error);
