@@ -18,7 +18,9 @@ const queueManager = new QueueManager();
                 await channel.assertQueue(queue, {
                     durable: true,
                 });
+
                 channel.consume(queue, async (data) => {
+                    console.log("Out :: 1");
                     const parentData = JSON.parse(Buffer.from(data.content));
                     await transactionWorker(parentData);
                     await channel.ack(data);
